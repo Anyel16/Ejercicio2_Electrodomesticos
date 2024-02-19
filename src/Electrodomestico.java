@@ -2,35 +2,11 @@
 //si un metodo es abstracto la clase entera tambien
 public abstract class Electrodomestico {
 
-    private String Tipo;
+    protected String Tipo;
 
-    public String getTipo() {
-        return Tipo;
-    }
+    protected String Marca;
 
-    public void setTipo(String tipo) {
-        Tipo = tipo;
-    }
-
-    private String Marca;
-
-    public String getMarca() {
-        return Marca;
-    }
-
-    public void setMarca(String marca) {
-        Marca = marca;
-    }
-
-    private double Potencia;
-
-    public double getPotencia() {
-        return Potencia;
-    }
-
-    public void setPotencia(double potencia) {
-        Potencia = potencia;
-    }
+    protected double Potencia;
 
     @Override
     public String toString() {
@@ -55,5 +31,7 @@ public abstract class Electrodomestico {
     //metodo abstracto--> Solo se define, no tiene código
     public abstract double getConsumo(int horas);
 
-    public abstract double getCosteConsumo(int horas, double costeHora);
+    public double getCosteConsumo(int horas, double costeHora){
+        return horas*costeHora;
+    }
 }
